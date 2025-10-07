@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Etapa Productiva - Subida de Documentos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Etapa Productiva - Subir Documentos</h1>
+      <p class="subtitle">Asegúrate de tener todos los documentos en formato PDF y máximo 5 MB cada uno.</p>
+    </header>
+
+    <form id="formEtapa" class="form" novalidate>
+      <div class="row">
+        <label for="ficha">Número de ficha</label>
+        <input id="ficha" name="ficha" type="text" inputmode="numeric" required placeholder="Ej: 1234567" />
+      </div>
+
+      <div class="row">
+        <label for="identificacion">Número de identificación</label>
+        <input id="identificacion" name="identificacion" type="text" inputmode="numeric" required placeholder="Ej: 1234567890" />
+      </div>
+
+      <div class="row">
+        <label for="modalidad">Modalidad</label>
+        <select id="modalidad" name="modalidad" required>
+          <option value="">-- Seleccione modalidad --</option>
+          <option value="contrato">Contrato de aprendizaje</option>
+          <option value="monitorias">Monitorias</option>
+          <option value="vinculo">Vínculo laboral</option>
+          <option value="proyecto">Proyecto Productivo</option>
+          <option value="pasantia">Pasantía</option>
+        </select>
+      </div>
+
+      <section id="documentosRequeridos" class="document-list" aria-live="polite">
+        <!-- Aquí se inyectan los inputs de archivos según la modalidad -->
+      </section>
+
+      <div class="actions">
+        <button id="btnSubmit" type="submit" class="btn primary">Enviar documentos</button>
+        <button id="btnReset" type="button" class="btn secondary">Limpiar formulario</button>
+      </div>
+
+      <div id="mensajes" class="mensajes" role="status" aria-live="assertive"></div>
+    </form>
+
+    <footer class="footer">
+      <small>Diseñado para integrar con Google Apps Script — carpeta Drive y Sheet listos.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
